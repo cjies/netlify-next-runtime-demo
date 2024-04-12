@@ -1,0 +1,7 @@
+type Test {
+  foo: String
+}
+
+type Query {
+  test: Test
+}

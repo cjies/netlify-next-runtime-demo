@@ -1,6 +1,19 @@
+import { getGraphqlClient } from "@/clients/graphqlClient";
 import Image from "next/image";
 
-export default function Home() {
+const testQuery = `#graphql
+  query test {
+    test {
+      foo
+    }
+  } 
+`;
+
+export default async function Home() {
+  const { data, error } = await getGraphqlClient().query(testQuery, {});
+
+  console.log('[debug] testQuery', data, error);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
