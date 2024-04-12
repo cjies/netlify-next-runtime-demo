@@ -1,5 +1,6 @@
 import { getGraphqlClient } from "@/clients/graphqlClient";
-import Image from "next/image";
+
+export const dynamic = 'force-dynamic'
 
 const testQuery = `#graphql
   query test {
